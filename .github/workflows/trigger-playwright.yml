@@ -20,9 +20,8 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.PLAYWRIGHT_PAT }}" \
             https://api.github.com/repos/j3-m2stack/playwright_test/dispatches \
             -d '{
-              "event_type": "run-playwright",
-              "client_payload": {
-                "pr_number": "${{ github.event.pull_request.number }}"
+              "event_type":"run-playwright",
+              "client_payload":{
+                "pr_number":"${{ github.event.pull_request.number }}"
               }
             }'
-  
