@@ -1,0 +1,95 @@
+<div class="settings-container" style="padding: 20px;">
+  <div class="header" style="margin-bottom: 20px;">
+    <h1>Settings</h1>
+    <p>Manage your application settings and preferences.</p>
+  </div>
+
+  <div class="cards-layout" style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+    
+    <!-- Preferences Card -->
+    <mat-card class="settings-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Preferences</mat-card-title>
+        <mat-card-subtitle>Update your personal preferences</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <span matListItemTitle>Dark Mode</span>
+            <span matListItemLine>Toggle application dark theme</span>
+            <mat-slide-toggle matListItemMeta></mat-slide-toggle>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item style="margin-top: 15px;">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Language</mat-label>
+              <mat-select value="en">
+                <mat-option value="en">English (US)</mat-option>
+                <mat-option value="es">Spanish (ES)</mat-option>
+                <mat-option value="fr">French (FR)</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Notifications Card -->
+    <mat-card class="settings-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Notifications</mat-card-title>
+        <mat-card-subtitle>Control how we communicate with you</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <span matListItemTitle>Email Alerts</span>
+            <span matListItemLine>Receive daily summaries</span>
+            <mat-slide-toggle matListItemMeta checked="true"></mat-slide-toggle>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <span matListItemTitle>Push Notifications</span>
+            <span matListItemLine>Immediate alerts in browser</span>
+            <mat-slide-toggle matListItemMeta></mat-slide-toggle>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <span matListItemTitle>Marketing Emails</span>
+            <span matListItemLine>Offers and announcements</span>
+            <mat-slide-toggle matListItemMeta checked="false"></mat-slide-toggle>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Security Card -->
+    <mat-card class="settings-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Security</mat-card-title>
+        <mat-card-subtitle>Keep your account safe</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <span matListItemTitle>Two-Factor Authentication</span>
+            <span matListItemLine>Enable 2FA for enhanced security</span>
+            <button mat-stroked-button color="primary" matListItemMeta>Setup</button>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <span matListItemTitle>Change Password</span>
+            <span matListItemLine>Update your current password</span>
+            <button mat-button color="warn" matListItemMeta>Change</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <div style="margin-top: 20px; text-align: right;">
+    <button mat-button style="margin-right: 10px;">Cancel</button>
+    <button mat-raised-button color="primary">Save Changes</button>
+  </div>
+</div>

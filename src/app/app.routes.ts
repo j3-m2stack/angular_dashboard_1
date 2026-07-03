@@ -4,6 +4,7 @@ import { DashboardComponent } from './layouts/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { UsersComponent } from './pages/users/users.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,7 +18,7 @@ export const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'users', component: UsersComponent },
       { path: 'reports', component: HomeComponent },
-      { path: 'settings', component: HomeComponent },
+      { path: 'settings', component: SettingsComponent },
       { path: 'profile', component: HomeComponent }
     ]
   },
