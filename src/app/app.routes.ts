@@ -15,7 +15,6 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      // Other dummy routes can be added here, they can just point to home for now or be left empty
       { path: 'users', component: UsersComponent },
       { path: 'reports', component: HomeComponent },
       { path: 'settings', component: HomeComponent },
