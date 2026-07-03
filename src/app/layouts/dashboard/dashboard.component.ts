@@ -37,7 +37,8 @@ export class DashboardComponent {
     { icon: 'people', label: 'Users', route: '/dashboard/users' },
     { icon: 'bar_chart', label: 'Reports', route: '/dashboard/reports' },
     { icon: 'settings', label: 'Settings', route: '/dashboard/settings' },
-    { icon: 'person', label: 'Profile', route: '/dashboard/profile' }
+    { icon: 'person', label: 'Profile', route: '/dashboard/profile' },
+    { icon: 'person', label: 'playwright test', route: '/dashboard/profile' }
   ];
 
   logout(): void {
