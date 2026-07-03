@@ -6,6 +6,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-settings',
@@ -17,7 +20,10 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSlideToggleModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
