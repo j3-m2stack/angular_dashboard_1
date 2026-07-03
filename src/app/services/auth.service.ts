@@ -8,7 +8,7 @@ export class AuthService {
 
   readonly isLoggedIn = this.loggedInSignal.asReadonly();
 
-  constructor() {}
+  constructor() { }
 
   private checkInitialLoginState(): boolean {
     if (typeof window !== 'undefined' && window.localStorage) {
