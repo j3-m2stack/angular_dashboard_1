@@ -33,7 +33,6 @@ export class LoginComponent {
   });
 
   constructor() {
-    // If already logged in, redirect to dashboard
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
     }
