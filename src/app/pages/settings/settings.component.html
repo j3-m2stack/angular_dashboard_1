@@ -1,0 +1,38 @@
+<div class="settings-container" style="padding: 20px;">
+  <div class="header" style="margin-bottom: 20px;">
+    <h1>Settings</h1>
+    <p>Manage your application settings and preferences.</p>
+  </div>
+
+  <mat-card class="settings-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Preferences</mat-card-title>
+      <mat-card-subtitle>Update your personal preferences</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle>Email Notifications</span>
+          <span matListItemLine>Receive email updates and alerts</span>
+          <mat-slide-toggle matListItemMeta checked="true"></mat-slide-toggle>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <span matListItemTitle>Dark Mode</span>
+          <span matListItemLine>Toggle application dark theme</span>
+          <mat-slide-toggle matListItemMeta></mat-slide-toggle>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <span matListItemTitle>Two-Factor Authentication</span>
+          <span matListItemLine>Enable 2FA for enhanced security</span>
+          <button mat-stroked-button color="primary" matListItemMeta>Setup</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>Cancel</button>
+      <button mat-raised-button color="primary">Save Changes</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

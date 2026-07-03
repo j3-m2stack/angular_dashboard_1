@@ -17,6 +17,10 @@ const ELEMENT_DATA: UserData[] = [
   {id: 2, name: 'Bob Smith', role: 'Editor', status: 'Active'},
   {id: 3, name: 'Charlie Davis', role: 'Viewer', status: 'Inactive'},
   {id: 4, name: 'Diana Evans', role: 'Editor', status: 'Active'},
+  {id: 5, name: 'Eve Foster', role: 'Viewer', status: 'Active'},
+  {id: 6, name: 'Frank Green', role: 'Admin', status: 'Inactive'},
+  {id: 7, name: 'Grace Hill', role: 'Editor', status: 'Active'},
+  {id: 8, name: 'Henry Adams', role: 'Viewer', status: 'Inactive'}
 ];
 
 @Component({
