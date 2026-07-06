@@ -47,7 +47,7 @@ jobs:
             -H "Authorization: Bearer $GH_TOKEN" \
             https://api.github.com/repos/j3-m2stack/playwright_test/actions/workflows/playwright.yml/dispatches \
             -d '{
-              "ref":"main",
+              "ref":"dev",
               "inputs":{
                 "base_url":"${{ github.event.target_url }}",
                 "pr_number":"'"${PR_NUMBER}"'",
