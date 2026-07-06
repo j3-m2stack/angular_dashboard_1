@@ -1,0 +1,17 @@
+<mat-card class="activity-card">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let activity of activities">
+        <mat-icon matListItemIcon [style.color]="activity.color">{{ activity.icon }}</mat-icon>
+        <div matListItemTitle>{{ activity.message }}</div>
+        <div matListItemLine class="activity-time">{{ activity.time }}</div>
+      </mat-list-item>
+      <div *ngIf="activities.length === 0" class="no-data">
+        No recent activity.
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
