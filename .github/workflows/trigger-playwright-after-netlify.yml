@@ -1,0 +1,58 @@
+name: Trigger Playwright After Netlify
+
+on:
+  status:
+
+jobs:
+  trigger:
+    if: >
+      github.event.state == 'success' &&
+      github.event.context == 'netlify/angulardashborad/deploy-preview'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Status
+        run: |
+          echo "Context : ${{ github.event.context }}"
+          echo "State   : ${{ github.event.state }}"
+          echo "SHA     : ${{ github.event.sha }}"
+          echo "Preview : ${{ github.event.target_url }}"
+
+      - name: Find PR Number
+        env:
+          GH_TOKEN: ${{ secrets.PLAYWRIGHT_PAT }}
+        run: |
+          curl -s \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/commits/${{ github.event.sha }}/pulls \
+            -o prs.json
+
+          PR_NUMBER=$(jq -r '.[0].number' prs.json)
+
+          if [ "$PR_NUMBER" = "null" ] || [ -z "$PR_NUMBER" ]; then
+            echo "No PR found"
+            exit 1
+          fi
+
+          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+
+      - name: Trigger Playwright Workflow
+        env:
+          GH_TOKEN: ${{ secrets.PLAYWRIGHT_PAT }}
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/j3-m2stack/playwright_test/actions/workflows/playwright.yml/dispatches \
+            -d '{
+              "ref":"dev",
+              "inputs":{
+                "base_url":"${{ github.event.target_url }}",
+                "pr_number":"'"${PR_NUMBER}"'",
+                "sha":"${{ github.event.sha }}"
+              }
+            }'
+
+          echo "Playwright workflow triggered."

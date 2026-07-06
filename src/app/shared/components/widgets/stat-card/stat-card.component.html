@@ -1,0 +1,17 @@
+<mat-card class="stat-card">
+  <mat-card-content>
+    <div class="stat-content">
+      <div class="stat-text">
+        <div class="stat-title">{{ title }}</div>
+        <div class="stat-value">{{ value }}</div>
+        <div class="stat-trend" *ngIf="trend" [ngClass]="{'up': trendUp, 'down': !trendUp}">
+          <mat-icon>{{ trendUp ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+          <span>{{ trend }}</span>
+        </div>
+      </div>
+      <div class="stat-icon" [style.background-color]="color">
+        <mat-icon>{{ icon }}</mat-icon>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

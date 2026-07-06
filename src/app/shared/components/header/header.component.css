@@ -1,0 +1,19 @@
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.logo {
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.search-bar {
+  margin-right: 20px;
+}

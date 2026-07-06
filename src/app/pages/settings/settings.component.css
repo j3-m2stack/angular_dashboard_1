@@ -1,0 +1,12 @@
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-card {
+  margin-top: 20px;
+}
+
+mat-list-item {
+  padding: 10px 0;
+}

@@ -1,0 +1,20 @@
+<mat-card class="notification-card">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <span class="spacer"></span>
+    <button mat-button color="primary">Mark all as read</button>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let notif of notifications" [ngClass]="{'unread': !notif.isRead}">
+        <mat-icon matListItemIcon [style.color]="getColor(notif.type)">{{ getIcon(notif.type) }}</mat-icon>
+        <div matListItemTitle>{{ notif.title }}</div>
+        <div matListItemLine>{{ notif.description }}</div>
+        <div matListItemLine class="notif-time">{{ notif.time }}</div>
+      </mat-list-item>
+      <div *ngIf="notifications.length === 0" class="no-data">
+        You're all caught up!
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
